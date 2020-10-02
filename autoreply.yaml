@@ -1,3 +1,13 @@
-foo: bar
+# 单行文本
 hello: world
+
+# 包含空格
 'whats your name': 'My name is autoreply'
+
+# 多行文本
+'coffee': |
+  ┌───┐
+  │ ██  ├╮
+  │ 拿铁  ├╯
+  │ ██  │
+  ╰───╯

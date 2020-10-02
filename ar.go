@@ -3,6 +3,7 @@ package autoreply
 import (
 	"sync"
 
+	"github.com/Logiase/MiraiGo-Template/config"
 	"github.com/Mrs4s/MiraiGo/client"
 	"github.com/Mrs4s/MiraiGo/message"
 	"gopkg.in/yaml.v2"
@@ -30,10 +31,16 @@ func (a *ar) MiraiGoModule() bot.ModuleInfo {
 }
 
 func (a *ar) Init() {
-	bytes := utils.ReadFile("./autoreply.yaml")
+	path := config.GlobalConfig.GetString("logiase.autoreply.path")
+
+	if path == "" {
+		path = "./autoreply.yaml"
+	}
+
+	bytes := utils.ReadFile(path)
 	err := yaml.Unmarshal(bytes, &tem)
 	if err != nil {
-		logger.WithError(err).Errorf("unable to read autoreply.yaml")
+		logger.WithError(err).Errorf("unable to read config file in %s", path)
 	}
 }
 

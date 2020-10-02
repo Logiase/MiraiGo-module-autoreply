@@ -25,6 +25,12 @@ imports (
 
 ```
 
+配置文件默认位置 ./autoreply.yaml
+
+同时可以在全局配置 application.yaml 中 设置 logiase.autoreply.path 键值
+
+配置文件请遵循 yaml 规则
+
 参照 [autoreply](./autoreply.yaml) 编写相应回复
 
 目前仅支持文本消息，其他消息类型会抽时间~~咕咕咕~~
