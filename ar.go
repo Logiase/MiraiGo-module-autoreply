@@ -64,6 +64,7 @@ func (a *ar) Start(bot *bot.Bot) {
 }
 
 func (a *ar) Stop(bot *bot.Bot, wg *sync.WaitGroup) {
+	defer wg.Done()
 }
 
 func autoreply(in string) string {
